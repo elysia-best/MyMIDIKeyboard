@@ -42,6 +42,11 @@
  extern "C" {
 #endif 
 
+/* 用户定义 */
+
+#define HXTAL_VALUE ((uint32_t)8000000) // 定义外部晶振为 8MHz
+
+
 /* define GD32F4xx */
 #if !defined (GD32F450)  && !defined (GD32F405) && !defined (GD32F407) && !defined (GD32F470)  && !defined (GD32F425) && !defined (GD32F427)
   /* #define GD32F450 */
