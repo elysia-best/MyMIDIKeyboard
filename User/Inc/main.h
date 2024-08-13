@@ -10,6 +10,10 @@
 #define __MAIN_H_
 
 #include <stdint.h>
+#include <stdbool.h>
+
+/** 函数原型定义 */
+
 
 #endif
 
