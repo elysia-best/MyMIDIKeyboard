@@ -44,14 +44,14 @@ void elysia_usart_init(void) {
   usart_parity_config(BSP_USART, USART_PM_NONE);    // 没有校验位
   usart_word_length_set(BSP_USART, USART_WL_8BIT);  // 8位数据位
   usart_stop_bit_set(BSP_USART, USART_STB_1BIT);    // 1位停止位
-
+  usart_receive_config(BSP_USART, USART_RECEIVE_ENABLE); // 使能串口接收
   usart_transmit_config(BSP_USART, USART_TRANSMIT_ENABLE);  // 使能串口发送
   usart_enable(BSP_USART);                                     // 使能串口
 
   // 使能USART中断
-//  nvic_irq_enable(USART0_IRQn, 0, 0);
-//  // 使能串口接收中断
-//  usart_interrupt_enable(USART0, USART_INT_RBNE);
+  nvic_irq_enable(USART0_IRQn, 0, 0);
+  // 使能串口接收中断
+  usart_interrupt_enable(USART0, USART_INT_RBNE);
 }
 
 void ELYSIA_UART_Transmit(uint32_t uart, uint8_t *pData, uint32_t dataSize) {

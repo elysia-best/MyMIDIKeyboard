@@ -13,7 +13,7 @@ int main(void) {
   elysia_usart_init();
 
   while (true) {
-    ELYSIA_UART_Transmit(USART0, "Hello world!\n", sizeof("Hello world!\n"));
-    ELYSIA_Delay(10);
+//    ELYSIA_UART_Transmit(USART0, "Hello world!\n", sizeof("Hello world!\n"));
+//    ELYSIA_Delay(10);
   }
 }

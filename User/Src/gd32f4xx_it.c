@@ -152,8 +152,8 @@ void USART0_IRQHandler(void) {
   if (RESET != usart_interrupt_flag_get(USART0, USART_INT_FLAG_RBNE)) {
     data = usart_data_receive(USART0);
 
-//    usart_data_transmit(USART0, (uint8_t)data);
-//    while (RESET == usart_flag_get(USART0, USART_FLAG_TBE))
-//      ;  // 发送完成判断
+    usart_data_transmit(USART0, (uint8_t)data);
+    while (RESET == usart_flag_get(USART0, USART_FLAG_TBE))
+      ;  // 发送完成判断
   }
 }
